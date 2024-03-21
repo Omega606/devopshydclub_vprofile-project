@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vproapp
-        image: omega606/vprofile-app
+        image: omega606/vprofile-app:V1
         ports:
         - name: vproapp-port
           containerPort: 8080
