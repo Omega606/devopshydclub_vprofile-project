@@ -77,13 +77,14 @@ pipeline {
         stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
-                scannerHome = tool 'mysonarscanner4'
+                scannerHome = tool 'Sonar-5.0.1.3006'
             }
 
             steps {
-                withSonarQubeEnv('sonar-pro') {
-                    sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
-                   -Dsonar.projectName=vprofile-repo \
+                withSonarQubeEnv('sonar-hybrid') {
+                    sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile-repo-hybrid \
+                   -Dsonar.projectName=vprofile-repo-hybrid \
+		   -Dsonar.organization=skynetonline \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
