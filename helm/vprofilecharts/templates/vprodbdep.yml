@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: imranvisualpath/8pmdbimg:v1
+        image: omega606/vprofile-db:V1 
         ports:
         - name: vprodb-port
           containerPort: 3306
@@ -29,4 +29,3 @@ spec:
 #        env:
 #         - name: MYSQL_ROOT_PASSWORD
 #           value: "vprodbpass"
-
